@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KB — Organize suas tarefas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-brand">
+      <img class="logo" src="logo.png" alt="KB Logo" />
+      <h1 class="header-title">Organize suas tarefas</h1>
+    </div>
+    <div class="header-actions">
+      <span class="task-counter" id="task-counter">0 Tarefas</span>
+      <button class="btn-primary" id="btn-new-task">+ Nova tarefa</button>
+    </div>
+  </header>
+
+  <!-- BOARD -->
+  <main class="board" id="board">
+
+    <div class="frame" id="frame-todo">
+      <div class="column" data-col="todo" id="col-todo">
+        <div class="column-header">
+          <div class="col-title-group">
+            <span class="col-dot"></span>
+            <span class="col-title">A FAZER</span>
+          </div>
+          <span class="col-count" id="count-todo">0</span>
+        </div>
+        <div class="column-body" id="body-todo">
+          <div class="drop-ghost"></div>
+        </div>
+        <button class="btn-add-col" data-col="todo">+ adicionar</button>
+      </div>
+    </div>
+
+    <div class="frame" id="frame-doing">
+       <div class="column" data-col="doing" id="col-doing">
+        <div class="column-header">
+          <div class="col-title-group">
+            <span class="col-dot"></span>
+            <span class="col-title">EM ANDAMENTO</span>
+          </div>
+          <span class="col-count" id="count-doing">0</span>
+        </div>
+        <div class="column-body" id="body-doing">
+          <div class="drop-ghost"></div>
+        </div>
+        <button class="btn-add-col" data-col="doing">+ adicionar</button>
+      </div>
+    </div>
+
+    <div class="frame" id="frame-done">
+      <div class="column" data-col="done" id="col-done">
+        <div class="column-header">
+          <div class="col-title-group">
+            <span class="col-dot"></span>
+            <span class="col-title">CONCLUÍDO</span>
+          </div>
+          <span class="col-count" id="count-done">0</span>
+        </div>
+        <div class="column-body" id="body-done">
+          <div class="drop-ghost"></div>
+        </div>
+        <button class="btn-add-col" data-col="done">+ adicionar</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Nova tarefa</h2>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+
+      <div class="form-group">
+        <label for="f-title">Título</label>
+        <input type="text" id="f-title" placeholder="Ex: Criar tela de login" maxlength="100" autocomplete="off" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-col">Coluna</label>
+          <select id="f-col">
+            <option value="todo">A Fazer</option>
+            <option value="doing">Em Andamento</option>
+            <option value="done">Concluído</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-tag">Tag</label>
+          <select id="f-tag">
+            <option value="dev">dev</option>
+            <option value="bug">bug</option>
+            <option value="revisão">revisão</option>
+            <option value="design">design</option>
+            <option value="conteúdo">conteúdo</option>
+            <option value="infra">infra</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-priority">Prioridade</label>
+          <select id="f-priority">
+            <option value="high">Alta</option>
+            <option value="medium">Média</option>
+            <option value="low">Baixa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-due">Prazo</label>
+          <input type="date" id="f-due" />
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" id="btn-cancel">Cancelar</button>
+        <button class="btn-save" id="btn-save">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
