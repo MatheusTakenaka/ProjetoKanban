@@ -15,7 +15,12 @@ Este projeto foi desenvolvido com:
 - HTML
 - CSS
 - JavaScript
+- Claude Code (IA auxiliar no desenvolvimento)
 
+  
+# 🤖 IA utilizada
+
+Este projeto contou com o auxílio da IA Claude Code para apoio no desenvolvimento, estruturação e implementação de funcionalidades.
 
 # ▶️ Como executar o projeto
 
